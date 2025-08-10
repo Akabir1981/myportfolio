@@ -130,26 +130,3 @@ arrowLeft.addEventListener('click', () => {
   
 });
 
-// Safari স্পেসিফিক span animation fix
-document.addEventListener('DOMContentLoaded', () => {
-  if (isSafari()) {
-    const spans = document.querySelectorAll('.home-details h2 span');
-    let current = 0;
-
-    spans.forEach(span => {
-      span.style.display = 'none';
-      span.style.animation = 'none';
-    });
-
-    function showNextSpan() {
-      spans.forEach(span => (span.style.display = 'none'));
-      spans[current].style.display = 'inline-block';
-      spans[current].style.animation = 'display-text 4s linear forwards';
-
-      current = (current + 1) % spans.length;
-      setTimeout(showNextSpan, 4000);
-    }
-
-    showNextSpan();
-  }
-});
