@@ -127,4 +127,19 @@ arrowLeft.addEventListener('click', () => {
   }
 
   activePortfolio();
+  
 });
+
+function isSafari() {
+  // Safari detection (exclude Chrome, Firefox etc)
+  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+}
+
+if (isSafari()) {
+  const spans = document.querySelectorAll('.home-details h2 span');
+  spans.forEach((span, index) => {
+    // animation-delay reset করে stagger করব Safari তে
+    span.style.animationDelay = `${index * 4}s`;
+    span.style.webkitAnimationDelay = `${index * 4}s`;
+  });
+}
