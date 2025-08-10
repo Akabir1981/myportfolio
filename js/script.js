@@ -130,18 +130,7 @@ arrowLeft.addEventListener('click', () => {
   
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-   
-    }
-    if (isSafari()) {
-      const spans = document.querySelectorAll('.home-details h2 span');
-      spans.forEach((span, index) => {
-        span.style.animationDelay = `${index * 4}s`;
-        span.style.webkitAnimationDelay = `${index * 4}s`;
-      });
-    }
-  });
-
+// Safari স্পেসিফিক span animation fix
 document.addEventListener('DOMContentLoaded', () => {
   if (isSafari()) {
     const spans = document.querySelectorAll('.home-details h2 span');
