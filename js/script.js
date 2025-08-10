@@ -135,11 +135,13 @@ function isSafari() {
   return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 }
 
-if (isSafari()) {
-  const spans = document.querySelectorAll('.home-details h2 span');
-  spans.forEach((span, index) => {
-    // animation-delay reset করে stagger করব Safari তে
-    span.style.animationDelay = `${index * 4}s`;
-    span.style.webkitAnimationDelay = `${index * 4}s`;
+document.addEventListener('DOMContentLoaded', () => {
+  
+    if (isSafari()) {
+      const spans = document.querySelectorAll('.home-details h2 span');
+      spans.forEach((span, index) => {
+        span.style.animationDelay = `${index * 4}s`;
+        span.style.webkitAnimationDelay = `${index * 4}s`;
+      });
+    }
   });
-}
