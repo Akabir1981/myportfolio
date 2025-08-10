@@ -161,11 +161,11 @@ section.active {
     display: inline-block;
   color: transparent;
   -webkit-text-stroke: 0.07rem var(--main-color);
-  animation: display-text 16s linear infinite;
-  animation-delay: calc(-4s * var(--i));
+  -webkit-animation: display-text 16s linear infinite;
+  -webkit-animation-delay: calc(-4s * var(--i));
 }
 
-@keyframes display-text {
+@-webkit-keyframes display-text {
   25%,
   100% {
     display: none;
