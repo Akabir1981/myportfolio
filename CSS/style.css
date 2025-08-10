@@ -162,11 +162,9 @@ section.active {
   color: transparent;
   -webkit-text-stroke: 0.07rem var(--main-color);
   -webkit-animation: display-text 16s linear infinite;
-/*   animation-delay: calc(-4s * var(--i));
-  -webkit-animation-delay: calc(-4s * var(--i)); */ */
-  animation-delay: -4s;
--webkit-animation-delay: -4s;
-   
+  animation-delay: calc(-4s * var(--i));
+  -webkit-animation-delay: calc(-4s * var(--i)); */
+     
 }
 
 @-webkit-keyframes display-text {
