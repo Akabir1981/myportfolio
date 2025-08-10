@@ -130,13 +130,10 @@ arrowLeft.addEventListener('click', () => {
   
 });
 
-function isSafari() {
-  // Safari detection (exclude Chrome, Firefox etc)
-  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  
+    function isSafari() {
+      return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    }
     if (isSafari()) {
       const spans = document.querySelectorAll('.home-details h2 span');
       spans.forEach((span, index) => {
@@ -145,3 +142,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (isSafari()) {
+    const spans = document.querySelectorAll('.home-details h2 span');
+    let current = 0;
+
+    spans.forEach(span => {
+      span.style.display = 'none';
+      span.style.animation = 'none';
+    });
+
+    function showNextSpan() {
+      spans.forEach(span => (span.style.display = 'none'));
+      spans[current].style.display = 'inline-block';
+      spans[current].style.animation = 'display-text 4s linear forwards';
+
+      current = (current + 1) % spans.length;
+      setTimeout(showNextSpan, 4000);
+    }
+
+    showNextSpan();
+  }
+});
