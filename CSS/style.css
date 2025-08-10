@@ -154,10 +154,13 @@ section.active {
   display: inline-block;
   font-size: 3.2rem;
   margin-top: -1rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .home-details h2 span {
   position: relative;
+  vertical-align:bottom;
   display: inline-block;
   color: transparent;
   -webkit-text-stroke: 0.07rem var(--main-color);
