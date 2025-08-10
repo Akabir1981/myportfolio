@@ -164,7 +164,7 @@ section.active {
   -webkit-animation: display-text 16s linear infinite;
   animation-delay: calc(-4s * var(--i));
   -webkit-animation-delay: calc(-4s * var(--i)); */
-    /* Safari rendering fix যোগ করো এখানে
+   
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
