@@ -131,8 +131,7 @@ arrowLeft.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    function isSafari() {
-      return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+   
     }
     if (isSafari()) {
       const spans = document.querySelectorAll('.home-details h2 span');
