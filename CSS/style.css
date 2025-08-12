@@ -898,7 +898,9 @@ section.active {
 }
 
 @media screen and (max-width: 410px) {
-
+ html {
+    font-size: 40%;
+  }
 
   .home-details,
   .resume-box h2,
