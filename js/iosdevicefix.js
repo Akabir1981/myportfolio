@@ -1,15 +1,27 @@
+// এই স্ক্রিপ্টটি আপনার HTML ফাইলের </body> ক্লোজিং ট্যাগের আগে যুক্ত করুন
 document.addEventListener('DOMContentLoaded', function() {
-    // iOS ডিটেক্ট করুন
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const problemText = document.querySelector('.home-details h3'); // আপনার টেক্সট সিলেক্টর দিয়ে পরিবর্তন করুন
     
-    if (isIOS) {
-        const scdText = document.querySelector('.home-details h3'); // বা টেক্সট কন্টেইনার সিলেক্ট করুন
-        if (scdText) {
-            // iOS-এর জন্য স্পেসিফিক স্টাইল অ্যাপ্লাই করুন
-            scdText.style.textAlign = 'center';
-            scdText.style.margin = '0 auto';
-            scdText.style.display = 'block';
-        }
+    if (isIOS && problemText) {
+        const fixIOSAlignment = () => {
+            if (window.innerHeight > window.innerWidth) { // পোর্ট্রেট মোড চেক
+                problemText.style.cssText = `
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: block;
+                    width: max-content;
+                `;
+            } else {
+                problemText.style.cssText = ''; // ল্যান্ডস্কেপ মোডে স্টাইল রিসেট
+            }
+        };
+
+        // প্রথম লোডে চেক করুন
+        fixIOSAlignment();
+        
+        // স্ক্রিন রোটেশন হলে আবার চেক করুন
+        window.addEventListener('resize', fixIOSAlignment);
     }
 });
