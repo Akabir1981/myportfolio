@@ -60,6 +60,11 @@ header.active {
   font-weight: 700;
 }
 
+.logo span {
+  color: var(--main-color);
+}
+  
+
 nav a {
   font-size: 2rem;
   color: var(--white-color);
