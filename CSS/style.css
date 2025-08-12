@@ -923,3 +923,12 @@ section.active {
     font-size: 3.5rem;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+    /* শুধুমাত্র iOS ডিভাইসের জন্য */
+    .home-details h3 {
+        text-align: center !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+}
