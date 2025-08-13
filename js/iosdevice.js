@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 3. ডিবাগিং ইনফো (কনসোলে চেক করুন)
     console.log(`iOS Device Detected. Total spans: ${textSpans.length}`);
     textSpans.forEach((span, i) => {
-        console.log(`Span ${i}:`, span.textContent);
+        console.log(` Span ${i}:`, span.textContent);
     });
 
     // 4. ফোর্সড সেন্টার অ্যালাইনমেন্ট
