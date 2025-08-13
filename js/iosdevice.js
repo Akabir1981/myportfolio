@@ -1,27 +1,48 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    
-    if (isIOS) {
-        const textSpans = document.querySelectorAll('.home-details h2 span');
-        let currentIndex = 0;
+    const textSpans = document.querySelectorAll('.home-details h2 span');
+    let currentIndex = 0;
+    let isAnimating = false;
 
-        // শুরুতে শুধুমাত্র প্রথম টেক্সট ভিজিবল করুন
-        textSpans.forEach((span, index) => {
-            span.style.opacity = index === 0 ? '1' : '0';
-            span.style.animation = index === 0 ? '' : 'none';
+    // iOS ডিটেকশন (শুধু লগ করার জন্য)
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    console.log(`Running on ${isIOS ? 'iOS' : 'Non-iOS'} device`);
+
+    function activateSpan(index) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        // 1. সব spans রিসেট
+        textSpans.forEach(span => {
+            span.style.opacity = '0';
+            span.style.animation = 'none';
+            span.removeEventListener('animationend', handleAnimationEnd);
         });
 
-        // অ্যানিমেশন শেষ হলে পরবর্তী টেক্সট শো করুন
-        function showNextText() {
-            textSpans[currentIndex].style.opacity = '0'; // বর্তমান টেক্সট লুকান
-            currentIndex = (currentIndex + 1) % textSpans.length; // পরবর্তী ইনডেক্স
-            textSpans[currentIndex].style.opacity = '1'; // নতুন টেক্সট ভিজিবল করুন
-            textSpans[currentIndex].style.animation = ''; // অ্যানিমেশন চালু
-        }
+        // 2. নতুন span অ্যাক্টিভেট
+        textSpans[index].style.opacity = '1';
+        textSpans[index].style.animation = '';
+        
+        // 3. ফোর্স রিফ্লো (iOS বাগ ফিক্স)
+        void textSpans[index].offsetWidth;
+        
+        // 4. ইভেন্ট লিসেনার
+        textSpans[index].addEventListener('animationend', handleAnimationEnd);
+    }
 
-textSpans.forEach(span => {
-            span.addEventListener('animationend', showNextText);
-        });
-    }
+    function handleAnimationEnd() {
+        isAnimating = false;
+        currentIndex = (currentIndex + 1) % textSpans.length;
+        activateSpan(currentIndex);
+    }
+
+    // ডিবাগিং
+    textSpans.forEach((span, i) => {
+        span.addEventListener('animationstart', () => 
+            console.log(`Animation STARTED for span ${i}`));
+        span.addEventListener('animationend', () => 
+            console.log(`Animation ENDED for span ${i}`));
+    });
+
+    // শুরু করুন
+    activateSpan(0);
 });
