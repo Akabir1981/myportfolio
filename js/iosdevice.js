@@ -11,8 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(`iOS Device Detected. Total spans: ${textSpans.length}`);
     textSpans.forEach((span, i) => {
         console.log(`Span ${i}:`, span.textContent);
-        
-      
+
+        // এই লাইনটি যোগ করুন (নতুন কোড)
+        if (span.textContent.trim() === "I am a") {
+            span.textContent = "I am a "; // স্পেস সহ
+        }
     });
 
     // 4. ফোর্সড সেন্টার অ্যালাইনমেন্ট
