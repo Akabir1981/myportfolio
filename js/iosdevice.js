@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // এই লাইনটি যোগ করুন (নতুন কোড)
         if (span.textContent.trim() === "I'm a") {
-            span.textContent = "I'm a "; // স্পেস সহ
+            span.textContent = "I'm a  "; // স্পেস সহ
         }
     });
 
