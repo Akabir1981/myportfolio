@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(`Span ${i}:`, span.textContent);
 
         // এই লাইনটি যোগ করুন (নতুন কোড)
-        if (span.textContent.trim() === "I am a") {
-            span.textContent = "I am a "; // স্পেস সহ
+        if (span.textContent.trim() === "I'm a") {
+            span.textContent = "I'm a "; // স্পেস সহ
         }
     });
 
