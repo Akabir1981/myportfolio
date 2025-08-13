@@ -875,8 +875,8 @@ section.active {
 
 @media screen and (max-width: 600px) {
   .home-img .img-box {
-    width: 35rem;
-    height: 35rem;
+    width: 40rem;
+    height: 40rem;
   }
 
   .contact-box .field-box {
