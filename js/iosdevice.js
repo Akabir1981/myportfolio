@@ -9,9 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 3. ডিবাগিং ইনফো (কনসোলে চেক করুন)
     console.log(`iOS Device Detected. Total spans: ${textSpans.length}`);
-      // এই একটি লাইন যোগ করুন (আপনার বাকি কোডের আগে)
-    textSpans.forEach(span => { if (span.textContent === "I'm a") span.textContent = "I'm a  "; });
-    
     textSpans.forEach((span, i) => {
         console.log(`Span ${i}:`, span.textContent);
 
@@ -21,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // }
         
     });
+    
+    // এই একটি লাইন যোগ করুন (আপনার বাকি কোডের আগে)
+    textSpans.forEach(span => { if (span.textContent === "I'm a") span.textContent = "I'm a  "; });
+    
+   
 
     // 4. ফোর্সড সেন্টার অ্যালাইনমেন্ট
     textContainer.style.cssText = `
