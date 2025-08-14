@@ -152,7 +152,7 @@ section.active {
 }
 
 .home-details h1 {
-  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  font-size: clamp(3rem, 10vw, 5rem);
 }
 
 .home-details h2 {
@@ -969,5 +969,15 @@ ul.custom-bullet li::before {
   .contact-box h2 {
     font-size: 3.5rem;
   }
+}
+
+ul.custom-bullet li::before {
+    content: "■"; /* square bullet */
+    font-size: 1em; /* শুধু bullet বড় */
+    color: var(--main-color); /* bullet এর রঙ */
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1;
 }
 
