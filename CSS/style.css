@@ -206,6 +206,10 @@ section.active {
   margin-top: 2rem;
 }
 
+.home-details h3 span {
+   color: var(--main-color);
+}
+
 .home-details p {
   font-size: 1.6rem;
   margin: 1rem 0 2.5rem;
@@ -218,6 +222,9 @@ section.active {
 
 .home-details ul li {
     font-size: 1.6rem;
+  }
+.home-details ul li span {
+     color: var(--main-color);
   }
 
 .home-details .btn-sci {
