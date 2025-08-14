@@ -218,8 +218,7 @@ section.active {
 
 .home-details ul li {
     font-size: 1.6rem;
-  margin: 1rem 0 2.5rem;
-}
+  }
 
 .home-details .btn-sci {
   display: flex;
