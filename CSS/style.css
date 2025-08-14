@@ -211,12 +211,12 @@ section.active {
   margin: 1rem 0 2.5rem;
 }
 
-.home-details p ul {
+.home-details ul {
   font-size: 2rem;
   
 }
 
-.home-details p ul li {
+.home-details ul li {
   color: var(--main-color);
   font-size: 2rem;
 }
