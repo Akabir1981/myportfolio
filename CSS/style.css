@@ -207,14 +207,10 @@ section.active {
 }
 
 .home-details p {
-  font-size: 1.6rem;
+  font-size: 2rem;
   margin: 1rem 0 2.5rem;
 }
 
-.home-details p ul {
-  font-size: 2rem;
-  color: var(--main-color);
-  }
 .home-details .btn-sci {
   display: flex;
   align-items: center;
