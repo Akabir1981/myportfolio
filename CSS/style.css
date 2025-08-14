@@ -236,23 +236,19 @@ section.active {
   } */
 
 ul.custom-bullet li {
-    list-style-type: none; /* default bullet remove */
-    position: relative;
-    padding-left: 1.5em; /* text একটু সরানো */
-    }
+    list-style: none;
+    display: flex;
+    align-items: center; /* text এবং bullet vertical center */
+    gap: 0.5em; /* bullet এবং text এর মধ্যে فاصله */
+}
 
 ul.custom-bullet li::before {
     content: "■"; /* square bullet */
-    font-size: 1.5em; /* শুধু bullet বড় */
-    color: var(--main-color); /* bullet এর রঙ */
-    position: absolute;
-    left: 0;
-    top: 50px;
-    transform: translateY(-50%); /* ঠিক وسطে বসানো */
-    line-height: 1;
+    font-size: 1.5em; /* bullet বড় */
+    color: var(--main-color);
+    display: inline-block; /* flex এর জন্য */
+    width: 1em; /* optional, bullet size control */
 }
-
-
 
 
 .home-details .btn-sci {
