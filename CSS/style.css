@@ -215,11 +215,11 @@ section.active {
   margin: 1rem 0 2.5rem;
 }
 
-.home-details ul {
+/* .home-details ul {
   font-size: 1.6rem;
   margin: 1rem 0 2.5rem;
  list-style-type: square;
-  }
+  } */
 
 
 
@@ -231,9 +231,28 @@ section.active {
 
   }
 
-.home-details ul li::marker {
+/* .home-details ul li::marker {
     color: var(--main-color);
-  }
+  } */
+
+ul.custom-bullet li {
+    list-style-type: none; /* default bullet remove */
+    position: relative;
+    padding-left: 1.5em; /* text একটু সরানো */
+}
+
+ul.custom-bullet li::before {
+    content: "■"; /* square bullet */
+    font-size: 1.5em; /* শুধু bullet বড় */
+    color: var(--main-color); /* bullet এর রঙ */
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1;
+}
+
+
+
 
 .home-details .btn-sci {
   display: flex;
