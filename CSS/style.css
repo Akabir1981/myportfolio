@@ -216,6 +216,11 @@ section.active {
   
 }
 
+.home-details p ul li {
+  color: var(--main-color);
+  font-size: 2rem;
+}
+
 .home-details .btn-sci {
   display: flex;
   align-items: center;
