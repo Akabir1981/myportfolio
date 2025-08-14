@@ -212,7 +212,8 @@ section.active {
 }
 
 .home-details p ul {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  color: var(--main-color);
   }
 .home-details .btn-sci {
   display: flex;
