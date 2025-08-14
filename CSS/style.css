@@ -248,7 +248,6 @@ ul.custom-bullet li::before {
     position: absolute;
     left: 0;
     top: 50px;
-    line-height: 1;
     transform: translateY(-50%); /* ঠিক وسطে বসানো */
     line-height: 1;
 }
