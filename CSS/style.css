@@ -157,7 +157,7 @@ section.active {
 
 .home-details h2 {
   display: inline-block;
-  font-size: 3.2rem;
+  font-size: 2.7rem;
   margin-top: -1rem;
   }
 
@@ -225,6 +225,8 @@ section.active {
   }
 .home-details ul li span {
      color: var(--main-color);
+  font-weight: 700;
+  font weig
   }
 
 .home-details .btn-sci {
