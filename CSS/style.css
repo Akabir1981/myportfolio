@@ -218,8 +218,8 @@ section.active {
 .home-details ul {
   font-size: 1.6rem;
   margin: 1rem 0 2.5rem;
-    
-}
+ list-style-type: square;
+  }
 
 
 
@@ -232,11 +232,8 @@ section.active {
   }
 
 .home-details ul li::marker {
-  list-style-type: square;
-  font-size: 2rem;
-  color: var(--main-color);
-  
-}
+    color: var(--main-color);
+  }
 
 .home-details .btn-sci {
   display: flex;
