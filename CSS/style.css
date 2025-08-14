@@ -220,7 +220,7 @@ section.active {
   margin: 1rem 0 2.5rem;
    list-style-type: square;
   color: var(--main-color);
-  font-size: 18px;
+  
 }
 
 .home-details ul li {
