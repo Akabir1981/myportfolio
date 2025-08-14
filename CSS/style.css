@@ -211,6 +211,9 @@ section.active {
   margin: 1rem 0 2.5rem;
 }
 
+.home-details p ul {
+  font-size: 1.8rem;
+  }
 .home-details .btn-sci {
   display: flex;
   align-items: center;
