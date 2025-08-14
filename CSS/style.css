@@ -215,11 +215,11 @@ section.active {
   margin: 1rem 0 2.5rem;
 }
 
-/* .home-details ul {
+.home-details ul {
   font-size: 1.6rem;
   margin: 1rem 0 2.5rem;
- list-style-type: square;
-  } */
+/*  list-style-type: square; */
+  }
 
 
 
