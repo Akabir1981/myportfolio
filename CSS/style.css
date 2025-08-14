@@ -212,13 +212,12 @@ section.active {
 }
 
 .home-details ul {
-  font-size: 2rem;
+  font-size: 1.6rem;
   
 }
 
 .home-details ul li {
-  color: var(--main-color);
-  font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .home-details .btn-sci {
