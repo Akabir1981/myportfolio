@@ -207,8 +207,13 @@ section.active {
 }
 
 .home-details p {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin: 1rem 0 2.5rem;
+}
+
+.home-details p ul {
+  font-size: 2rem;
+  
 }
 
 .home-details .btn-sci {
