@@ -247,7 +247,7 @@ ul.custom-bullet li::before {
     color: var(--main-color); /* bullet এর রঙ */
     position: absolute;
     left: 0;
-    top: 0;
+    top: .5px;
     line-height: 1;
 }
 
