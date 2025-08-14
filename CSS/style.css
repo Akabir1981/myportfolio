@@ -239,8 +239,7 @@ ul.custom-bullet li {
     list-style-type: none; /* default bullet remove */
     position: relative;
     padding-left: 1.5em; /* text একটু সরানো */
-    vertical-align: middle;
-}
+    }
 
 ul.custom-bullet li::before {
     content: "■"; /* square bullet */
@@ -248,7 +247,9 @@ ul.custom-bullet li::before {
     color: var(--main-color); /* bullet এর রঙ */
     position: absolute;
     left: 0;
-    top: ০px;
+    top: 50px;
+    line-height: 1;
+    transform: translateY(-50%); /* ঠিক وسطে বসানো */
     line-height: 1;
 }
 
