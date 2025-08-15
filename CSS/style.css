@@ -252,13 +252,14 @@ ul.custom-bullet li::before {
     line-height: 1;
 }
 
-/* ডিফল্টে desktop version দেখাবো */
-.custom-bullet {
+/* ===== Desktop default: UL দেখাবে, P লুকাবে ===== */
+.home-details ul.custom-bullet {
   display: block;
 }
-.mobile-text {
-  display: none;
+.home-details p.mobile-text {
+  display: none !important;   /* আগের .home-details p {display:none} বা অন্য কিছুকে ওভাররাইড করবে */
 }
+
 
 .home-details .btn-sci {
   display: flex;
