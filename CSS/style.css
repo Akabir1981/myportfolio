@@ -252,13 +252,15 @@ ul.custom-bullet li::before {
     line-height: 1;
 }
 
-/* ===== Desktop default: UL দেখাবে, P লুকাবে ===== */
+/* Desktop: show UL, hide P */
 .home-details ul.custom-bullet {
   display: block;
 }
+
 .home-details p.mobile-text {
-  display: none;   /* আগের .home-details p {display:none} বা অন্য কিছুকে ওভাররাইড করবে */
+  display: none;
 }
+
 
 
 .home-details .btn-sci {
@@ -988,11 +990,12 @@ ul.custom-bullet li::before {
     line-height: 1;
 }
 
-/* Mobile screen 410px বা কম হলে */
-  ul.custom-bullett {
-    display: none;
+  .home-details ul.custom-bullet {
+    display: none; /* hide desktop UL */
   }
-  .mobile-text {
-    display: block;
+  
+  .home-details p.mobile-text {
+    display: block; /* show mobile P */
   }
 }
+
