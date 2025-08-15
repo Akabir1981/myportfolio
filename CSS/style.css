@@ -377,6 +377,51 @@ ul.custom-bullet li::before {
   color: var(--main-color);
 }
 
+
+.career-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* দুই কলাম প্রথম রো */
+  grid-auto-rows: auto;
+  gap: 2rem;
+    
+}
+
+.career-box:nth-child(3) {
+  grid-column: 1 / -1; /* ৩য় কলাম পুরো row নেবে */
+}
+
+
+.career-container .career-box {
+  padding: 3rem 2.5rem;
+  background: var(--second-bg-color);
+  border: 0.2rem solid var(--second-bg-color);
+  border-radius: 1rem;
+ 
+}
+
+.career-container .career-box:hover {
+  border-color: var(--main-color);
+  transform: scale(1.02);
+}
+
+
+.career-box h3 {
+  font-size: 3rem;
+  margin: 0.5rem 0 2rem;
+  transition: 0.5s;
+}
+
+.career-box:hover h3 {
+  color: var(--main-color);
+}
+
+.career-box p {
+  font-size: 1.6rem;
+}
+
+
+
+
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
