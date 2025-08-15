@@ -253,7 +253,7 @@ ul.custom-bullet li::before {
 }
 
 /* ডিফল্টে desktop version দেখাবো */
-ul.custom-bullett {
+.custom-bullet {
   display: block;
 }
 .mobile-text {
