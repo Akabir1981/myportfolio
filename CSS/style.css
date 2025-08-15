@@ -213,7 +213,7 @@ section.active {
 .home-details p {
   font-size: 1.6rem;
   margin: 1rem 0 2.5rem;
-  display: none;
+/*   display: none; */
 }
 
 .home-details ul {
