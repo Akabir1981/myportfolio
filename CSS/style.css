@@ -950,7 +950,7 @@ ul.custom-bullet li::before {
   }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 400px) {
  html {
     font-size: 40%;
   }
