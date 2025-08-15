@@ -152,7 +152,7 @@ section.active {
 }
 
 .home-details h1 {
-  font-size: clamp(3rem, 10vw, 5rem);
+  font-size: clamp(3rem, 8vw, 5rem);
 }
 
 .home-details h2 {
