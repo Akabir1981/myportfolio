@@ -254,13 +254,12 @@ ul.custom-bullet li::before {
 
 /* Desktop: show UL, hide P */
 .home-details ul.custom-bullet {
-  display: block;
+  display: block !important;
 }
 
 .home-details p.mobile-text {
-  display: none;
+  display: none !important;
 }
-
 
 
 .home-details .btn-sci {
