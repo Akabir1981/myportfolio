@@ -253,6 +253,9 @@ ul.custom-bullet li::before {
 }
 
 /* Desktop: show UL, hide P */
+.home-details ul.custom-bullet {
+  display: block;
+}
 
 .home-details p.mobile-text {
   display: none;
