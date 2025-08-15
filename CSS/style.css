@@ -257,7 +257,7 @@ ul.custom-bullet li::before {
   display: block !important;
 }
 
-.home-details p.mobile-text {
+.home-details p.small-text {
   display: none !important;
 }
 
@@ -982,11 +982,11 @@ ul.custom-bullet li::before {
  .home-details ul.custom-bullet {
     display: none !important;
   }
-  .home-details p.mobile-text {
+  .home-details p.small-text {
     display: block !important;
   }
 
-    .home-details p.mobile-text span {
+    .home-details p.small-text span {
      color: var(--main-color);
 
   }
