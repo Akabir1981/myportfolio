@@ -985,6 +985,11 @@ ul.custom-bullet li::before {
   .home-details p.mobile-text {
     display: block !important;
   }
+
+    .home-details p.mobile-text span {
+     color: var(--main-color);
+
+  }
 }
 
 
