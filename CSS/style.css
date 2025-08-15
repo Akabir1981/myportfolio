@@ -987,12 +987,5 @@ ul.custom-bullet li::before {
     line-height: 1;
 }
 
-  .home-details ul.custom-bullet {
-    display: none; /* hide desktop UL */
-  }
-  
-  .home-details p.mobile-text {
-    display: block; /* show mobile P */
-  }
-}
+ 
 
