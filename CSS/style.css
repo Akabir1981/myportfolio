@@ -419,6 +419,21 @@ ul.custom-bullet li::before {
   font-size: 1.6rem;
 }
 
+.career-box .icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.career-box .icon i {
+  font-size: 4.5rem;
+  transition: 0.5s;
+}
+
+.career-box:hover .icon:not(a i) {
+  color: var(--main-color);
+}
+
 
 
 
