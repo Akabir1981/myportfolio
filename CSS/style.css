@@ -257,7 +257,7 @@ ul.custom-bullet li::before {
   display: block;
 }
 .home-details p.mobile-text {
-  display: none !important;   /* আগের .home-details p {display:none} বা অন্য কিছুকে ওভাররাইড করবে */
+  display: none;   /* আগের .home-details p {display:none} বা অন্য কিছুকে ওভাররাইড করবে */
 }
 
 
