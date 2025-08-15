@@ -252,8 +252,12 @@ ul.custom-bullet li::before {
     line-height: 1;
 }
 
-.home-details p .text-small {
-  display: none; /* ডিফল্টভাবে hidden */
+/* ডিফল্টে desktop version দেখাবো */
+ul.custom-bullett {
+  display: block;
+}
+.mobile-text {
+  display: none;
 }
 
 .home-details .btn-sci {
@@ -983,12 +987,11 @@ ul.custom-bullet li::before {
     line-height: 1;
 }
 
-@media screen and (max-width: 410px) {
-  ul.custom-bullet li {
-    display: none; /* ছোট স্ক্রিনে hide */
+/* Mobile screen 410px বা কম হলে */
+  ul.custom-bullett {
+    display: none;
   }
-  .text-small {
-    display: block; /* ছোট স্ক্রিনে show */
+  .mobile-text {
+    display: block;
   }
 }
-
