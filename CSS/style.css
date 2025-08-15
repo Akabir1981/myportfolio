@@ -252,7 +252,7 @@ ul.custom-bullet li::before {
     line-height: 1;
 }
 
-.text-small {
+.home-details p .text-small {
   display: none; /* ডিফল্টভাবে hidden */
 }
 
