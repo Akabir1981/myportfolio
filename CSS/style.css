@@ -430,7 +430,7 @@ ul.custom-bullet li::before {
   transition: 0.5s;
 }
 
-.career-box:hover .icon:not(a i) {
+.career-box:hover .icon:not(i) {
   color: var(--main-color);
 }
 
