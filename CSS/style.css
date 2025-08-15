@@ -251,6 +251,9 @@ ul.custom-bullet li::before {
     line-height: 1;
 }
 
+.text-small {
+  display: none; /* ডিফল্টভাবে hidden */
+}
 
 .home-details .btn-sci {
   display: flex;
@@ -977,5 +980,14 @@ ul.custom-bullet li::before {
     left: 0;
     top: 0;
     line-height: 1;
+}
+
+@media screen and (max-width: 410px) {
+  ul.custom-bullet li {
+    display: none; /* ছোট স্ক্রিনে hide */
+  }
+  .text-small {
+    display: block; /* ছোট স্ক্রিনে show */
+  }
 }
 
