@@ -977,17 +977,16 @@ ul.custom-bullet li::before {
   .contact-box h2 {
     font-size: 3.5rem;
   }
+
+
+ .home-details ul.custom-bullet {
+    display: none !important;
+  }
+  .home-details p.mobile-text {
+    display: block !important;
+  }
 }
 
-ul.custom-bullet li::before {
-    content: "■"; /* square bullet */
-    font-size: 1em; /* শুধু bullet বড় */
-    color: var(--main-color); /* bullet এর রঙ */
-    position: absolute;
-    left: 0;
-    top: 0;
-    line-height: 1;
-}
 
  
 
