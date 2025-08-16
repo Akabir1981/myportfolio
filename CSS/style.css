@@ -396,7 +396,7 @@ ul.custom-bullet li::before {
   background: var(--second-bg-color);
   border: 0.2rem solid var(--second-bg-color);
   border-radius: 1rem;
- 
+ transition: transform 0.5s;
 }
 
 .career-container .career-box:hover {
