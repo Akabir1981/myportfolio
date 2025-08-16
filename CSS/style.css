@@ -1011,7 +1011,7 @@ ul.custom-bullet li::before {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 410px) {
  html {
     font-size: 40%;
   }
