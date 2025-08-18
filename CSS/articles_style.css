@@ -121,6 +121,7 @@ button:hover {
   border-radius: 8px;
   background-color: #fff;
   transition: transform 0.2s;
+  overflow: hidden;
 }
 
 .article-item:hover {
@@ -153,5 +154,6 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
