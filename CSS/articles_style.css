@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f0f0f0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  background: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.article {
+  background: #fff;
+  margin: 15px auto;
+  padding: 15px;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.article h3 {
+  margin: 0 0 10px;
+  color: #222;
+}
+
+.article button {
+  background: #dc3545;
+  margin-top: 5px;
+}
+
+.article button:hover {
+  background: #a71d2a;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.search-bar input[type="text"],
+.search-bar select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Focus হলে সুন্দর effect */
+.search-bar input[type="text"]:focus,
+.search-bar select:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Hover effect */
+.search-bar input[type="text"]:hover,
+.search-bar select:hover {
+  border-color: #888;
+}
+
+/* Dropdown সুন্দর করার জন্য */
+.search-bar select {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+
+
+/* Container for all articles */
+#articleList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* spacing between articles */
+  justify-content:flex-start; /* alignment */
+  padding: 10px;
+}
+
+/* Individual article box */
+.article-item {
+  flex: 0 1 calc(33% - 20px); /* 3 items per row on large screens */
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+.article-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Heading inside article */
+.article-heading {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Article content */
+.article-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .article-item {
+    flex: 0 1 calc(50% - 20px); /* 2 items per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .article-item {
+    flex: 0 1 100%; /* 1 item per row */
+  }
+}
+
