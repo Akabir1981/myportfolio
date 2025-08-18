@@ -132,9 +132,10 @@ button:hover {
   padding: 10px;
 }
 
-/* Individual article box */
-.article-item {
-  flex: 0 1 calc(50% - 20px); /* 2 items per row */
+.article-item,
+.admin-page #articleList
+{
+  flex: 0 1 calc(100% - 20px); /* 2 items per row */
   box-sizing: border-box;
   padding: 15px;
   border: 1px solid #ccc;
@@ -148,6 +149,7 @@ button:hover {
   white-space: normal;
   word-break: break-word;   /* extra force */
 }
+
 
 .article-item p, 
 .article-item h3, 
@@ -186,6 +188,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
