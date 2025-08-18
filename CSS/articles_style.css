@@ -9,7 +9,7 @@ h1 {
   color: #333;
 }
 
-.articleForm {
+form {
   display: flex;
   flex-direction: column;
   max-width: 500px;
@@ -18,9 +18,7 @@ h1 {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;  /* ensures text wraps instead of one long line */
+  
 }
 
 input, textarea {
