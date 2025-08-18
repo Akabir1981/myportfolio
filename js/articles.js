@@ -1,46 +1,52 @@
-import { collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-// Read-only view (sorted by createdAt descending)
-export function initArticlesView(db) {
+// Read-only view
+export async function initArticlesView(API_URL) {
   const list = document.getElementById("articleList");
-  const articlesCol = collection(db, "articles");
 
-  // Query with orderBy createdAt descending
-  const articlesQuery = query(articlesCol, orderBy("createdAt", "desc"));
+  try {
+    const res = await fetch(API_URL);
+    const articles = await res.json();
 
-  onSnapshot(articlesQuery, snapshot => {
     list.innerHTML = "";
-    snapshot.forEach(docSnap => {
-      const data = docSnap.data();
-      list.innerHTML += `
-        <div class="article article-item">
-          <h3 class="article-heading">${data.title}</h3>
-          <p>${data.content}</p>
-        </div>
+    articles.forEach(a => {
+      const div = document.createElement("div");
+      div.className = "article article-item";
+      div.innerHTML = `
+        <h3 class="article-heading">${a.title}</h3>
+        <p>${a.content}</p>
       `;
+      list.appendChild(div);
     });
-  });
+  } catch (err) {
+    console.error("Failed to load articles:", err);
+    list.innerHTML = "<p>Error loading articles.</p>";
+  }
 }
 
 // Manage (Add) page
-export function initArticlesManage(db) {
+export function initArticlesManage(API_URL) {
   const list = document.getElementById("articleList");
   const form = document.getElementById("articleForm");
-  const articlesCol = collection(db, "articles");
 
-  // Live update
-  onSnapshot(articlesCol, snapshot => {
-    list.innerHTML = "";
-    snapshot.forEach(docSnap => {
-      const data = docSnap.data();
-      list.innerHTML += `
-        <div class="article article-item">
-          <h3 class="article-heading">${data.title}</h3>
-          <p>${data.content}</p>
-        </div>
-      `;
-    });
-  });
+  async function loadArticles() {
+    try {
+      const res = await fetch(API_URL);
+      const articles = await res.json();
+      list.innerHTML = "";
+      articles.forEach(a => {
+        const div = document.createElement("div");
+        div.className = "article article-item";
+        div.innerHTML = `
+          <h3 class="article-heading">${a.title}</h3>
+          <p>${a.content}</p>
+        `;
+        list.appendChild(div);
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  loadArticles();
 
   // Add article
   form.addEventListener("submit", async e => {
@@ -49,7 +55,16 @@ export function initArticlesManage(db) {
     const content = form.content.value.trim();
     if (!title || !content) return;
 
-    await addDoc(articlesCol, { title, content, createdAt: new Date() });
-    form.reset();
+    try {
+      await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, content })
+      });
+      form.reset();
+      loadArticles(); // Refresh list
+    } catch (err) {
+      console.error("Failed to add article:", err);
+    }
   });
 }
