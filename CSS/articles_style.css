@@ -108,13 +108,17 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 20px; /* spacing between articles */
+  flex-direction: row;
   justify-content:flex-start; /* alignment */
   padding: 10px;
+  
 }
 
 /* Individual article box */
 .article-item {
   flex: 0 1 calc(50% - 20px); /* 3 items per row on large screens */
+  flex-direction: row;
+  justify-content:flex-start; /* alignment */
   box-sizing: border-box;
   padding: 15px;
   border: 1px solid #ccc;
@@ -122,6 +126,7 @@ button:hover {
   background-color: #fff;
   transition: transform 0.2s;
   overflow: hidden;
+  flex-grow: 2;
 }
 
 .article-item:hover {
@@ -154,6 +159,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
