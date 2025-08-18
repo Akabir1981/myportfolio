@@ -43,6 +43,25 @@ button:hover {
   background: #0056b3;
 }
 
+.admin-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.left-panel {
+  flex: 0 1 300px; /* left panel width */
+}
+
+.right-panel {
+  flex: 1 1 600px; /* article list takes remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+
 .article {
   background: #fff;
   margin: 15px auto;
@@ -160,6 +179,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
