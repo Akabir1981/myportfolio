@@ -172,13 +172,13 @@ button:hover {
   color: #555;
 }
 
-/* Admin Page এর জন্য Override */
-.admin-page .article-item {
-  word-wrap: break-word;       /* পুরানো browser support */
-  overflow-wrap: anywhere;     /* নতুন browser support */
-  white-space: normal;         /* এক লাইনে চাপিয়ে রাখবে না */
-  overflow: hidden;            /* scrollbar আসবে না */
-  text-overflow: ellipsis;     /* optional: অনেক বড় হলে "..." দেখাবে */
+/* Force break long text in admin page */
+.admin-page .article-item p,
+.admin-page .article-item h3 {
+  word-break: break-word;   /* breaks long words */
+  overflow-wrap: anywhere;  /* modern browsers */
+  white-space: normal;      /* prevents single-line stretching */
+  max-width: 100%;          /* ensures it never overflows container */
 }
 
 
@@ -195,6 +195,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
