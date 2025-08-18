@@ -172,6 +172,15 @@ button:hover {
   color: #555;
 }
 
+/* Admin Page এর জন্য Override */
+.admin-page .article-item {
+  word-wrap: break-word;       /* পুরানো browser support */
+  overflow-wrap: anywhere;     /* নতুন browser support */
+  white-space: normal;         /* এক লাইনে চাপিয়ে রাখবে না */
+  overflow: hidden;            /* scrollbar আসবে না */
+  text-overflow: ellipsis;     /* optional: অনেক বড় হলে "..." দেখাবে */
+}
+
 
 
 /* Responsive adjustments */
@@ -186,6 +195,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
