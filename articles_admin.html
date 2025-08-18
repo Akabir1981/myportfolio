@@ -11,8 +11,13 @@
   <div class="admin-container">
   <div class="left-panel">
     <div class="search-bar">
-      <!-- search input here -->
+    <h3>Search & Filter</h3>
+    <!-- <label for="Search">Search Content</label> -->
+  <input type="text" id="searchInput" placeholder="Search articles...">
     </div>
+    </div>
+
+</div>
 
   <form id="articleForm">
    
@@ -20,10 +25,10 @@
     <textarea name="content" placeholder="Write article..." required></textarea>
     <button type="submit">Add Article</button>
       </form>
-    </div>  
+      
 
   <div id="articleList"></div>
-</div>  
+ 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
     import { getFirestore } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -49,6 +54,7 @@
   </script>
 </body>
 </html>
+
 
 
 
