@@ -142,12 +142,19 @@ button:hover {
   background-color: #fff;
   transition: transform 0.2s;
 
-  /* New properties for text wrap */
+  /* ✅ Force wrapping */
   word-wrap: break-word;
   overflow-wrap: break-word;
-  white-space: normal;  /* ensures text wraps instead of one long line */
+  white-space: normal;
+  word-break: break-word;   /* extra force */
 }
 
+.article-item p, 
+.article-item h3, 
+.article-item div {
+  overflow-wrap: anywhere;  /* ensures even long URLs/tokens wrap */
+  white-space: normal;
+}
 
 .article-item:hover {
   transform: translateY(-3px);
@@ -179,6 +186,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
