@@ -1,8 +1,0 @@
-name = "articles-worker"
-main = "worker.js"
-compatibility_date = "2025-08-18"
-
-[[d1_databases]]
-binding = "DB"  
-database_name = "articles"
-database_id = "f0c04895-5b71-4f2d-bfa6-e0ba626f44c9"
