@@ -125,7 +125,7 @@ button:hover {
   border-radius: 8px;
   background-color: #fff;
   transition: transform 0.2s;
-  overflow: hidden;
+  overflow: auto;
   flex-grow: 2;
 }
 
@@ -159,6 +159,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
