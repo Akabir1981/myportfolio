@@ -8,14 +8,22 @@
 <body>
   <h1>Admin: Manage Articles</h1>
 
+  <div class="admin-container">
+  <div class="left-panel">
+    <div class="search-bar">
+      <!-- search input here -->
+    </div>
+
   <form id="articleForm">
+   
     <input type="text" name="title" placeholder="Title" required>
     <textarea name="content" placeholder="Write article..." required></textarea>
     <button type="submit">Add Article</button>
-  </form>
+      </form>
+    </div>  
 
   <div id="articleList"></div>
-
+</div>  
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
     import { getFirestore } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -41,4 +49,5 @@
   </script>
 </body>
 </html>
+
 
