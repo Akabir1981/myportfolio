@@ -132,8 +132,7 @@ button:hover {
   padding: 10px;
 }
 
-.article-item,
-.admin-page #articleList
+.article-item
 {
   flex: 0 1 calc(50% - 20px); /* 2 items per row */
   box-sizing: border-box;
@@ -188,6 +187,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
