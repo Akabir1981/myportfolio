@@ -1,0 +1,107 @@
+body.admin-page {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f0f0f0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* layout: left form + right articles */
+.admin-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* left panel for form */
+.left-panel {
+  flex: 0 0 300px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form input, form textarea {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+form button {
+  padding: 10px;
+  font-size: 16px;
+  background: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0056b3;
+}
+
+/* articles list */
+#articleList {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* each article */
+.article-item {
+  flex: 0 1 calc(50% - 20px);
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.2s;
+
+  /* fix overflow */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  max-width: 100%;
+}
+
+.article-item:hover {
+  transform: translateY(-3px);
+}
+
+/* heading & text */
+.article-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #222;
+  word-break: break-word;
+}
+
+.article-item p {
+  font-size: 1rem;
+  color: #555;
+  word-break: break-word;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .article-item {
+    flex: 0 1 100%;
+  }
+
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+  }
+}
