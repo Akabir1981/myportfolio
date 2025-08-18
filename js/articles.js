@@ -1,28 +1,55 @@
-// articles.js
-export async function initArticlesView(API_URL) {
+import { collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+// Read-only view (sorted by createdAt descending)
+export function initArticlesView(db) {
   const list = document.getElementById("articleList");
+  const articlesCol = collection(db, "articles");
 
-  try {
-    const res = await fetch(API_URL + "/articles");
-    const articles = await res.json();
+  // Query with orderBy createdAt descending
+  const articlesQuery = query(articlesCol, orderBy("createdAt", "desc"));
 
+  onSnapshot(articlesQuery, snapshot => {
     list.innerHTML = "";
-    articles.forEach(article => {
-      const div = document.createElement("div");
-      div.className = "article article-item";
-
-      const heading = document.createElement("h3");
-      heading.className = "article-heading";
-      heading.textContent = article.title;
-
-      const content = document.createElement("p");
-      content.textContent = article.content;
-
-      div.appendChild(heading);
-      div.appendChild(content);
-      list.appendChild(div);
+    snapshot.forEach(docSnap => {
+      const data = docSnap.data();
+      list.innerHTML += `
+        <div class="article article-item">
+          <h3 class="article-heading">${data.title}</h3>
+          <p>${data.content}</p>
+        </div>
+      `;
     });
-  } catch (err) {
-    console.error("Error fetching articles:", err);
-  }
+  });
+}
+
+// Manage (Add) page
+export function initArticlesManage(db) {
+  const list = document.getElementById("articleList");
+  const form = document.getElementById("articleForm");
+  const articlesCol = collection(db, "articles");
+
+  // Live update
+  onSnapshot(articlesCol, snapshot => {
+    list.innerHTML = "";
+    snapshot.forEach(docSnap => {
+      const data = docSnap.data();
+      list.innerHTML += `
+        <div class="article article-item">
+          <h3 class="article-heading">${data.title}</h3>
+          <p>${data.content}</p>
+        </div>
+      `;
+    });
+  });
+
+  // Add article
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const title = form.title.value.trim();
+    const content = form.content.value.trim();
+    if (!title || !content) return;
+
+    await addDoc(articlesCol, { title, content, createdAt: new Date() });
+    form.reset();
+  });
 }
