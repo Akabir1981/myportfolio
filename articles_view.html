@@ -36,18 +36,15 @@
   import { attachSearchInput } from "./js/searchFilter.js";
   import { initArticlesView } from "./js/articles.js";
 
-  // Worker API URL
-  const API_URL = "https://your-worker-url.workers.dev/articles";
+  const API_URL = "https://articles-worker.your-subdomain.workers.dev";
 
-  // Pass API_URL to your JS functions
   initArticlesView(API_URL);
   attachSearchInput(API_URL);
 </script>
-  
-
 
 </body>
 </html>
+
 
 
 
