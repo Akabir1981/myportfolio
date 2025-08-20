@@ -1,40 +1,24 @@
 import { collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-// Read-only view (sorted by createdAt descending)
-export function initArticlesView(db) {
-  const list = document.getElementById("articleList");
-  const articlesCol = collection(db, "articles");
-  const articlesQuery = query(articlesCol, orderBy("createdAt", "desc"));
-
-  onSnapshot(articlesQuery, snapshot => {
-    list.innerHTML = "";
-    snapshot.forEach(docSnap => {
-      const data = docSnap.data();
-      list.innerHTML += `
-        <div class="article article-item">
-          <h3 class="article-heading">${data.title}</h3>
-          <p class="article-content">${data.content.replace(/\n/g, "<br>")}</p>
-        </div>
-      `;
-    });
-  });
-}
-
-// Manage (Add) page
 export function initArticlesManage(db) {
   const list = document.getElementById("articleList");
   const form = document.getElementById("articleForm");
   const articlesCol = collection(db, "articles");
 
+  // Initialize Quill editor
+  const quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+
   // Live update
-  onSnapshot(articlesCol, snapshot => {
+  onSnapshot(articlesCol, query(collection(db, "articles")), snapshot => {
     list.innerHTML = "";
     snapshot.forEach(docSnap => {
       const data = docSnap.data();
       list.innerHTML += `
         <div class="article article-item">
           <h3 class="article-heading">${data.title}</h3>
-          <p class="article-content">${data.content.replace(/\n/g, "<br>")}</p>
+          <div class="article-content">${data.content}</div>
         </div>
       `;
     });
@@ -44,10 +28,12 @@ export function initArticlesManage(db) {
   form.addEventListener("submit", async e => {
     e.preventDefault();
     const title = form.title.value.trim();
-    const content = form.content.value.trim();
+    const content = quill.root.innerHTML; // rich text HTML
+
     if (!title || !content) return;
 
     await addDoc(articlesCol, { title, content, createdAt: new Date() });
     form.reset();
+    quill.setContents([]); // clear editor
   });
 }
