@@ -173,8 +173,8 @@ button:hover {
   color: #555;
 }
 
-.article-content {
-  white-space: pre-line; /* 🔑 এটি new line, spacing সব ঠিক রাখবে */
+.article-item p.article-content {
+  white-space: pre-line;  /* 🔑 preserves new lines and spacing */
 }
 
 /* Responsive adjustments */
@@ -189,6 +189,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
