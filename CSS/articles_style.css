@@ -173,7 +173,9 @@ button:hover {
   color: #555;
 }
 
-
+.article-content {
+  white-space: pre-line; /* 🔑 এটি new line, spacing সব ঠিক রাখবে */
+}
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
@@ -187,6 +189,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
