@@ -4,8 +4,6 @@ import { collection, addDoc, onSnapshot, query, orderBy } from "https://www.gsta
 export function initArticlesView(db) {
   const list = document.getElementById("articleList");
   const articlesCol = collection(db, "articles");
-
-  // Query with orderBy createdAt descending
   const articlesQuery = query(articlesCol, orderBy("createdAt", "desc"));
 
   onSnapshot(articlesQuery, snapshot => {
@@ -15,9 +13,8 @@ export function initArticlesView(db) {
       list.innerHTML += `
         <div class="article article-item">
           <h3 class="article-heading">${data.title}</h3>
-           <p class="article-content">${data.content}</p>
-        
-          </div>
+          <p class="article-content">${data.content.replace(/\n/g, "<br>")}</p>
+        </div>
       `;
     });
   });
@@ -37,7 +34,7 @@ export function initArticlesManage(db) {
       list.innerHTML += `
         <div class="article article-item">
           <h3 class="article-heading">${data.title}</h3>
-          <p>${data.content}</p>
+          <p class="article-content">${data.content.replace(/\n/g, "<br>")}</p>
         </div>
       `;
     });
@@ -54,9 +51,3 @@ export function initArticlesManage(db) {
     form.reset();
   });
 }
-
-
-
-
-
-
