@@ -15,7 +15,7 @@ export function initArticlesView(db) {
       list.innerHTML += `
         <div class="article article-item">
           <h3 class="article-heading">${data.title}</h3>
-          <p>${data.content}</p>
+           <p class="article-content">${data.content}</p>
         
           </div>
       `;
@@ -54,6 +54,7 @@ export function initArticlesManage(db) {
     form.reset();
   });
 }
+
 
 
 
