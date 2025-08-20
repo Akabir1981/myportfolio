@@ -177,6 +177,10 @@ button:hover {
   white-space: pre-line;  /* 🔑 preserves new lines and spacing */
 }
 
+.article-content {
+  /* preserves HTML formatting from Quill */
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .article-item {
@@ -189,6 +193,7 @@ button:hover {
     flex: 0 1 100%; /* 1 item per row */
   }
 }
+
 
 
 
